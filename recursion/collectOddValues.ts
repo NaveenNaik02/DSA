@@ -38,4 +38,29 @@ function collectOddValues(numbers: number[]): number[] {
   return oddNumbers;
 }
 
-console.log(collectOddValues([1, 2, 3, 4, 5]));
+//other solution
+// It takes an array of numbers as input and returns an array of all the odd numbers in the input array.
+function collectOddValuesRec(arr: number[]): number[] {
+  // Initialize a new array to store the collected odd numbers.
+  let newArr: number[] = [];
+
+  // Base case: if the input array is empty, return the empty array.
+  if (arr.length === 0) {
+    return newArr;
+  }
+
+  // Check if the first number in the input array is odd.
+  // If it is odd, add it to the new array.
+  if (arr[0] % 2 !== 0) {
+    newArr.push(arr[0]);
+  }
+
+  // Recursive call: call the function with the remaining elements of the input array.
+  // This uses the slice method to create a new array that contains all the elements of the input array except the first one.
+  // The function is then called with this new array as input.
+  // The result of the recursive call is concatenated with the new array.
+  newArr = newArr.concat(collectOddValuesRec(arr.slice(1)));
+
+  // Return the new array containing all the odd numbers collected from the input array.
+  return newArr;
+}
