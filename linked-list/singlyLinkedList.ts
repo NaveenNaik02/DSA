@@ -1,37 +1,13 @@
+import { ListNode, LinkedList } from "./index";
+
 (() => {
-  class ListNode {
-    data: number;
-    next: ListNode | null;
-    constructor(data: number, next: ListNode | null = null) {
-      this.data = data;
-      this.next = next;
-    }
-  }
-
-  class LinkedList {
-    head: ListNode | null;
-    size: number;
+  class ExtendedLinkedList extends LinkedList {
     constructor() {
-      this.head = null;
-      this.size = 0;
-    }
-
-    add(data: number) {
-      const newNode = new ListNode(data);
-      if (this.size === 0) {
-        this.head = newNode;
-      } else {
-        let currentNode = this.head;
-        while (currentNode && currentNode?.next !== null) {
-          currentNode = currentNode?.next;
-        }
-        currentNode!.next = newNode;
-      }
-      this.size += 1;
+      super();
     }
 
     getNodeAt(index: number) {
-      if (index < 0 || index > this.size - 1) {
+      if (index < 0 || index > this.length - 1) {
         return `cannot find node at ${index}`;
       } else {
         let currentNode = this.head;
@@ -43,7 +19,7 @@
     }
 
     removeAt(index: number) {
-      if (index < 0 || index > linkedList.size - 1) {
+      if (index < 0 || index > linkedList.length - 1) {
         return `cannot find node at ${index}`;
       }
       let currentNode = this.head;
@@ -57,22 +33,22 @@
         }
         previousNode!.next = currentNode!.next;
       }
-      this.size -= 1;
-      return currentNode!.data;
+      this.length -= 1;
+      return currentNode!.val;
     }
 
     removeNode(data: number) {
       let currentNode = this.head;
       let previousNode: ListNode | null = null;
       while (currentNode !== null) {
-        if (currentNode.data === data) {
+        if (currentNode.val === data) {
           if (previousNode) {
             previousNode.next = currentNode.next;
           } else {
             this.head = currentNode.next;
           }
-          this.size -= 1;
-          return currentNode.data;
+          this.length -= 1;
+          return currentNode.val;
         }
         previousNode = currentNode;
         currentNode = currentNode.next;
@@ -81,7 +57,7 @@
     }
 
     insertAt(index: number, data: number) {
-      if (index < 0 || index > this.size) {
+      if (index < 0 || index > this.length) {
         return `cannot insert at ${index}`;
       }
       const newNode = new ListNode(data);
@@ -98,7 +74,7 @@
       }
       newNode.next = currentNode;
       previousNode!.next = newNode;
-      this.size += 1;
+      this.length += 1;
       return this;
     }
 
@@ -117,7 +93,7 @@
 
     //using recursion
     #reverseNode(node: ListNode, prevNode: ListNode | null = null): ListNode {
-      const newNode = new ListNode(node.data, prevNode);
+      const newNode = new ListNode(node.val, prevNode);
       if (node.next) {
         return this.#reverseNode(node.next, newNode);
       }
@@ -131,7 +107,7 @@
       return this;
     }
   }
-  const linkedList = new LinkedList();
+  const linkedList = new ExtendedLinkedList();
   linkedList.add(1);
   linkedList.add(2);
   linkedList.add(3);
