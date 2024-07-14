@@ -106,6 +106,24 @@ import { ListNode, LinkedList } from "./index";
       }
       return this;
     }
+    pop() {
+      if (this.length === 0) {
+        return `list is empty`;
+      }
+      if (this.length === 1) {
+        this.head = null;
+        this.length = 0;
+        return this;
+      }
+      let currentNode = this.head?.next;
+      let previousNode: ListNode | null = this.head;
+      while (currentNode?.next) {
+        previousNode = currentNode;
+        currentNode = currentNode.next;
+      }
+      previousNode!.next = null;
+      this.length -= 1;
+    }
   }
   const linkedList = new ExtendedLinkedList();
   linkedList.add(1);
