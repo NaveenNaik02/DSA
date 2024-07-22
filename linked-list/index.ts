@@ -23,7 +23,7 @@ export class LinkedList {
       return this.head;
     }
     let currentNode = this.head;
-    while (currentNode && currentNode?.next !== null) {
+    while (currentNode && currentNode.next !== null) {
       currentNode = currentNode?.next;
     }
     currentNode!.next = newNode;
