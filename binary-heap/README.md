@@ -60,3 +60,12 @@ Here, each parent node is greater than or equal to its children.
 
 - **Left Child Index**: `2 * index + 1`
 - **Right Child Index**: `2 * index + 2`
+
+## Priority Heap
+
+A **Priority Heap** is a data structure that combines the properties of a priority queue and a binary heap. It allows for efficient insertion of elements with associated priorities and quick retrieval of the element with the highest priority (lowest priority number). In this context, the heap property ensures that the parent node's priority is less than or equal to the priorities of its children.
+
+## Key Properties
+
+1. **Complete Tree**: The binary heap is always a complete tree, meaning all levels are fully filled except possibly the last level, which is filled from left to right.
+2. **Heap Property**: For a min-heap, every parent node has a priority less than or equal to its children. This ensures that the root node has the highest priority (lowest priority number).

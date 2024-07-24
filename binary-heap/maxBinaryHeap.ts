@@ -8,6 +8,7 @@
     insert(data: number) {
       this.values.push(data);
       this.#bubbleUp();
+      return this.values;
     }
 
     #bubbleUp() {
@@ -45,27 +46,27 @@
         let rightChildIndex = 2 * index + 2;
         let leftChild: number = -Infinity;
         let rightChild: number = -Infinity;
-        let swap: number | null = null;
+        let swapIndex: number | null = null;
 
         if (leftChildIndex < length) {
           leftChild = this.values[leftChildIndex];
           if (leftChild > element) {
-            swap = leftChildIndex;
+            swapIndex = leftChildIndex;
           }
         }
         if (rightChildIndex < length) {
           rightChild = this.values[rightChildIndex];
           if (
-            (swap === null && rightChild > element) ||
-            (swap !== null && rightChild > leftChild)
+            (swapIndex === null && rightChild > element) ||
+            (swapIndex !== null && rightChild > leftChild)
           ) {
-            swap = rightChildIndex;
+            swapIndex = rightChildIndex;
           }
         }
-        if (swap === null) break;
-        this.values[index] = this.values[swap];
-        this.values[swap] = element;
-        index = swap;
+        if (swapIndex === null) break;
+        this.values[index] = this.values[swapIndex];
+        this.values[swapIndex] = element;
+        index = swapIndex;
       }
     }
   }
