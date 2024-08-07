@@ -1,4 +1,4 @@
-### Binary Search Tree (BST)
+## Binary Search Tree (BST)
 
 A **Binary Search Tree (BST)** is a data structure that facilitates fast lookup, addition, and deletion of items. Each node in a BST has at most two children, referred to as the left child and the right child. The tree maintains the following properties:
 
@@ -18,11 +18,11 @@ Given the sequence `10, 5, 2, 7, 15, 12, 20`, here is the visual representation 
    2   7 12  20
 ```
 
-### Depth-First Search (DFS) Traversal
+## Depth-First Search (DFS) Traversal
 
 There are three common types of depth-first search (DFS) traversal methods: pre-order, in-order, and post-order.
 
-#### Pre-order Traversal
+### Pre-order Traversal
 
 In pre-order traversal, the nodes are recursively visited in the following order:
 
@@ -34,7 +34,7 @@ In pre-order traversal, the nodes are recursively visited in the following order
 
 For the BST above, the pre-order traversal sequence would be: `10, 5, 2, 7, 15, 12, 20`.
 
-#### In-order Traversal
+### In-order Traversal
 
 In in-order traversal, the nodes are recursively visited in the following order:
 
@@ -46,7 +46,7 @@ In in-order traversal, the nodes are recursively visited in the following order:
 
 For the BST above, the in-order traversal sequence would be: `2, 5, 7, 10, 12, 15, 20`.
 
-#### Post-order Traversal
+### Post-order Traversal
 
 In post-order traversal, the nodes are recursively visited in the following order:
 
@@ -57,3 +57,9 @@ In post-order traversal, the nodes are recursively visited in the following orde
 **Example:**
 
 For the BST above, the post-order traversal sequence would be: `2, 7, 5, 12, 20, 15, 10`.
+
+## Breadth-First Search (BFS)
+
+**Breadth-First Search (BFS)** is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or an arbitrary node in a graph) and explores the neighbor nodes at the present depth prior to moving on to nodes at the next depth level.
+
+**BFS Traversal**: `10 -> 5 -> 15 -> 2 -> 7 -> 12 -> 20`
