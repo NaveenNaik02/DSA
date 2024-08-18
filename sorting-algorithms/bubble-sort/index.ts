@@ -13,9 +13,7 @@
       }
 
       // if no swaps were made in the inner loop, it means the array is already sorted.
-      if (noSwap) {
-        return;
-      }
+      if (noSwap) return;
     }
   }
   const arr = [1, 2, 5, 2, 8, 1, 5];
