@@ -6,14 +6,14 @@ Insertion Sort is a simple sorting algorithm that builds the final sorted array 
 
 1. **Initial Step**:
 
-   - Start with the second element in the list, considering the first element as a sorted sublist.
-   - Compare the current element with the elements in the sorted sublist.
+   - Start with the second element in the list, considering the first element as a sorted sub list.
+   - Compare the current element with the elements in the sorted sub list.
 
 2. **Insertion**:
 
    - If the current element is smaller than the element it is compared with, shift the larger element to the right.
    - Continue this process until you find the correct position for the current element.
-   - Insert the current element at its correct position in the sorted sublist.
+   - Insert the current element at its correct position in the sorted sub list.
 
 3. **Repeat**:
    - Move to the next element and repeat the process until the entire list is sorted.
