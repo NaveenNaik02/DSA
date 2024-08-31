@@ -22,16 +22,16 @@ import { Node } from "./index";
       if (newNode.data < node.data) {
         if (node.left === null) {
           node.left = newNode;
-          return;
+        } else {
+          this.#insertNodeHelper(node.left, newNode);
         }
-        this.#insertNodeHelper(node.left, newNode);
-        return;
+      } else {
+        if (node.right === null) {
+          node.right = newNode;
+        } else {
+          this.#insertNodeHelper(node.right, newNode);
+        }
       }
-      if (node.right === null) {
-        node.right = newNode;
-        return;
-      }
-      this.#insertNodeHelper(node.right, newNode);
     }
 
     search(data: number): boolean {
